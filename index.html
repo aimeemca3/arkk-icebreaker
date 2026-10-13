@@ -316,6 +316,39 @@
 @media (max-width:1024px){.photos.four .frame,.photos.four .frame.hero{height:auto;width:100%}.photos.four{grid-template-columns:repeat(2,minmax(0,1fr))}.photos.four .ph:nth-child(2){grid-column:auto}.photos.four .ph:nth-child(2) .frame{max-width:none}}
 .photos.four .frame{height:min(calc(var(--vh)*.46),460px)}
 @media (max-width:1024px){.photos.four{grid-template-columns:repeat(3,minmax(0,1fr));max-width:720px}.photos.four .frame{height:auto}.photos.four .ph:nth-child(2){order:0}}
+
+.reg{width:100%;max-width:1180px;margin-top:clamp(48px,4.5vw,84px);text-align:left;font-size:15px;color:var(--ink)}
+.reg-shell{background:#fffaf1;border:1px solid var(--line);border-radius:26px;padding:clamp(14px,1.8vw,26px);box-shadow:0 30px 70px -40px rgba(42,33,24,.45)}
+.reg-head{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,#1e3526,#2f5d3a 70%,#4b5a2c);color:#f6f0e4;border-radius:18px;padding:clamp(18px,2vw,28px) clamp(18px,2.2vw,32px)}
+.reg-title{font-size:clamp(20px,1.8vw,28px);font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.reg-title svg{width:24px;height:24px;flex:none}
+.reg-sub{font-size:14px;color:#cfdcc4;margin-top:4px}
+.reg-stats{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.st{background:rgba(255,255,255,.08);border-radius:12px;padding:8px 14px;text-align:center;min-width:64px}
+.st b{display:block;font-size:24px;line-height:1.1}.st span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#cfdcc4}
+.st.r{display:flex;gap:6px;align-items:center;padding:8px 10px}
+.st.r i{font-style:normal;font-weight:700;font-size:15px;border-radius:8px;width:30px;height:30px;display:grid;place-items:center}
+.g{background:#cfe3c4;color:#24502e}.y{background:#f3e2a6;color:#6d5410}.rd{background:#f0c8b8;color:#8a2f1c}
+.reg-filters{display:flex;gap:8px;margin-top:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.reg-filters::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-size:13px;color:var(--ink-2);white-space:nowrap}
+.chip:after{content:" ▾";color:var(--mute)}
+.chip.search{color:var(--mute);min-width:150px}.chip.search:after{content:""}
+.reg-legend{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.lg{display:flex;gap:10px;align-items:center;font-size:12.5px;color:var(--ink-2);background:#f4ecdc;border-radius:12px;padding:10px 12px}
+.tag{flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:4px 8px}
+.t-sys{background:#dbe7d2;color:#2f5d3a}.t-mod{background:#e9dcc6;color:#7a4f22}.t-ds{background:#e4e6cf;color:#5b6224}.t-pr{background:#f1d9c7;color:#94512a}
+.reg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:16px}
+.rc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;border-left:5px solid #7fa86f;display:flex;flex-direction:column;gap:8px}
+.rc.Y{border-left-color:#d9b44a}.rc.R{border-left-color:#c0654a}
+.rc h4{margin:4px 0 0;font-size:17px;letter-spacing:-.01em}
+.rc p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.4}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.pill{font-size:12px;border-radius:999px;padding:3px 10px;background:#f4ecdc;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+.pill .dot{width:8px;height:8px;border-radius:50%}
+.reg-cap{font-size:14px;color:var(--mute);text-align:center;margin-top:16px}
+@media (max-width:1024px){.reg-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.reg-legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.reg-grid{grid-template-columns:1fr}.reg-legend{grid-template-columns:1fr 1fr}.lg{flex-direction:column;align-items:flex-start;gap:6px}.reg-head{flex-direction:column;align-items:flex-start}.reg{font-size:14px}}
 </style>
 </head>
 <body>
@@ -555,11 +588,25 @@
         <div><div class="lt">Light governance</div><div class="ls">Used openly. Used safely.</div></div>
       </div>
     </div>
+
+    <div class="reg rv d4" aria-label="AI Build Registry recreation">
+      <div class="reg-shell">
+        <div class="reg-head">
+          <div><div class="reg-title"><svg viewBox="0 0 24 24" fill="none" stroke="#e3a867" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>AI Build Registry</div><div class="reg-sub">Everything the team builds with AI, in one place</div></div>
+          <div class="reg-stats"><div class="st"><b>14</b><span>Assets</span></div><div class="st"><b>13</b><span>Active</span></div><div class="st r"><i class="g">4</i><i class="y">7</i><i class="rd">3</i><span>Risk</span></div></div>
+        </div>
+        <div class="reg-filters"><span class="chip search">Search builds…</span><span class="chip">All statuses</span><span class="chip">All risk levels</span><span class="chip">All teams</span><span class="chip">All scopes</span><span class="chip">All asset types</span></div>
+        <div class="reg-legend"><div class="lg"><span class="tag t-sys">AI System</span>A tool built on one or more models or datasets</div><div class="lg"><span class="tag t-mod">AI Model</span>A specific, versioned model</div><div class="lg"><span class="tag t-ds">Dataset</span>Data used by models, classified by sensitivity</div><div class="lg"><span class="tag t-pr">Prompt</span>A versioned, reusable prompt</div></div>
+        <div class="reg-grid"><div class="rc G"><div><span class="tag t-sys">AI System</span></div><h4>Meeting Notes Summariser</h4><p>Turns meeting recordings into actions and decisions.</p><div class="pills"><span class="pill"><span class="dot" style="background:#5f9a52"></span>Green</span><span class="pill">Org-wide</span><span class="pill">LLM (approved)</span></div></div><div class="rc G"><div><span class="tag t-sys">AI System</span></div><h4>Support Ticket Router</h4><p>Routes inbound tickets to the right team.</p><div class="pills"><span class="pill"><span class="dot" style="background:#5f9a52"></span>Green</span><span class="pill">Cross-team</span><span class="pill">LLM (approved)</span></div></div><div class="rc Y"><div><span class="tag t-sys">AI System</span></div><h4>Data Quality Monitor</h4><p>Flags anomalies and drift in incoming data.</p><div class="pills"><span class="pill"><span class="dot" style="background:#d4a72c"></span>Yellow</span><span class="pill">Cross-team</span><span class="pill">ML model (internal)</span></div></div><div class="rc G"><div><span class="tag t-pr">Prompt</span></div><h4>Report Drafting Prompt</h4><p>Versioned prompt for first-draft client reports.</p><div class="pills"><span class="pill"><span class="dot" style="background:#5f9a52"></span>Green</span><span class="pill">Cross-team</span><span class="pill">LLM (approved)</span></div></div><div class="rc Y"><div><span class="tag t-sys">AI System</span></div><h4>Client Data Mapper</h4><p>Suggests mappings from messy client files to the data model.</p><div class="pills"><span class="pill"><span class="dot" style="background:#d4a72c"></span>Yellow</span><span class="pill">Cross-team</span><span class="pill">LLM (approved)</span></div></div><div class="rc R"><div><span class="tag t-mod">AI Model</span></div><h4>Risk Explainer</h4><p>Plain-English explanations for risk decisions.</p><div class="pills"><span class="pill"><span class="dot" style="background:#c0533a"></span>Red</span><span class="pill">Org-wide</span><span class="pill">LLM (restricted)</span></div></div></div>
+      </div>
+      <p class="reg-cap">A recreation of the AI registry I built, with example entries.</p>
+    </div>
   </div>
   <div class="notes-src"><ul>
     <li>Enthusiasm brings a risk: people sneaking in unapproved tools. Shadow IT.</li>
     <li>So we put in lightweight governance. Clear, simple, and quick to follow.</li>
     <li>The point: people used AI openly and safely, rather than quietly working around the rules.</li>
+    <li>I built an AI registry so every tool, model and prompt had an owner, a risk rating and a scope, which made yes the easy answer instead of shadow IT.</li>
     <li>The best guardrails are the ones light enough that people actually follow them.</li>
   </ul></div>
 </section>
