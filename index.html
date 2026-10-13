@@ -128,14 +128,9 @@
 
   /* chrome */
   #progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);z-index:50}
-  #notes{position:fixed;right:20px;bottom:20px;width:min(440px,calc(100vw - 40px));max-height:55vh;overflow:auto;z-index:60;
     background:rgba(30,53,38,.96);color:#f6f0e4;border-radius:18px;padding:18px 22px 20px;font-size:15px;line-height:1.5;
     box-shadow:0 20px 60px -20px rgba(0,0,0,.5);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
     opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s}
-  #notes.show{opacity:1;transform:none;pointer-events:auto}
-  #notes .nh{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b3a48c;margin-bottom:8px;display:flex;justify-content:space-between}
-  #notes ul{padding-left:18px} #notes li{margin:6px 0}
-  .notes-src{display:none}
 
   /* static & reduced motion */
   .static .rv,.static .card,.static .foot{opacity:1;transform:none;transition:none}
@@ -218,18 +213,13 @@
   .st-n{background:#3d2e22;color:#cdbd9f}
   .st-d{color:#b5a586}
   .frame{background:#16261b}
-  #notes{color:#f6f0e4}
   ::selection{background:#d9c49a;color:#2a2118}
   /* ===== responsive ===== */
   @supports (height:100svh){ :root{--vh:100svh} }
   html,body{max-width:100%;overflow-x:clip}
   section{padding-left:max(clamp(20px,7vw,160px),env(safe-area-inset-left));padding-right:max(clamp(20px,7vw,160px),env(safe-area-inset-right))}
-  #notes{bottom:max(20px,env(safe-area-inset-bottom))}
-  #notesBtn{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:61;display:none;
     font:600 14px/1 var(--font);color:#f6f0e4;background:rgba(30,53,38,.92);border:1px solid rgba(246,240,228,.25);border-radius:999px;padding:11px 16px;
     box-shadow:0 10px 30px -10px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);cursor:pointer}
-  @media (hover:none),(max-width:1024px){ #notesBtn{display:block} }
-  .static #notesBtn{display:none}
 
   /* tablets and below: unpin, wrap, stack */
   @media (max-width:1024px){
@@ -308,8 +298,6 @@
     .lane svg{width:46px}
     .chips{gap:8px} .chip{font-size:15px}
     .tags{flex-wrap:wrap}
-    #notes{left:0;right:0;bottom:0;width:100%;max-height:55svh;border-radius:18px 18px 0 0;padding:16px 20px calc(18px + env(safe-area-inset-bottom))}
-    #notes.show ~ #notesBtn{bottom:calc(55svh + 10px)}
     .cue{display:none}
   }
 .photos.four{gap:clamp(20px,2.2vw,44px)}.photos.four .frame{height:min(calc(var(--vh)*.34),380px)}.photos.four .frame.hero{height:min(calc(var(--vh)*.48),540px)}
@@ -368,12 +356,6 @@
     <p class="small rv d3">Aimee McAllister</p>
   </div>
   <div class="cue" aria-hidden="true">Scroll<svg width="20" height="12" viewBox="0 0 20 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l8 8 8-8"/></svg></div>
-  <div class="notes-src"><ul>
-    <li>Hello, I'm Aimee. Thank you for having me, Laura and Cathy.</li>
-    <li>I could have picked anything for today. I picked the thing that has quietly taken over my house.</li>
-    <li>By the end you'll know who Margot, Olive and Harley are. All three of them are dogs.</li>
-    <li>About seven minutes. One idea at a time. Promise.</li>
-  </ul></div>
 </section>
 
 <section id="started" class="dark" data-title="How it started">
@@ -387,12 +369,6 @@
     <h2 class="rv d2">It started at <span class="grad">home.</span></h2>
     <p class="sub rv d3">Chris and I tried a personal AI assistant.<br><span class="muted">We were hooked within a week.</span></p>
   </div>
-  <div class="notes-src"><ul>
-    <li>This didn't start at work. It started on the sofa.</li>
-    <li>Chris, my partner, and I started using personal AI assistants at home. We use Grok Bot, and honestly, we love it.</li>
-    <li>It began as a novelty. Then it became the thing we'd ask before asking each other.</li>
-    <li>Then Chris did what any reasonable person would do: he set up three of them and gave them names. Keep scrolling.</li>
-  </ul></div>
 </section>
 
 <section id="team" class="light" data-title="The home team">
@@ -421,15 +397,6 @@
     </div>
     <p class="foot" data-at="0.72">Harley remembers birthdays <span class="muted">better than Chris does.</span></p>
   </div>
-  <div class="notes-src"><ul>
-    <li>Chris has set up three AI assistants to help run our personal life. Meet the home team.</li>
-    <li>Margot, the PA: named after our dog, drawn wearing a headset. Travel, deliveries, subscriptions, renewals and his inbox. Personal life only, never work. Every date goes in the calendar with a reminder, and she always drafts emails for him to approve before anything is sent.</li>
-    <li>So far she's tallied up the subscriptions, sorted our London hotel and flights, and added the car's MOT, tax and insurance dates.</li>
-    <li>Olive, the marathon coach: named after our other dog. Training plans and analysis of his runs, with his Coros data coming through Strava and a running summary every Monday. Target: sub-4 at the Belfast City Marathon, Sunday 2 May 2027.</li>
-    <li>And Harley: the birthday and gift planner, named after Harley, a black Labrador and our favourite holiday guest. Family birthdays, anniversaries, Christmas, celebrations. Reminders a week before, with gift and experience ideas. Because Chris always used to forget.</li>
-    <li>The best bit: they talk to each other. Margot has started handing out remits: running to Olive, celebrations to Harley, and she keeps the inbox.</li>
-    <li>And apparently gifts for me &lsquo;lean towards experiences together&rsquo;. I have that in writing. (Pause for the smile.)</li>
-  </ul></div>
 </section>
 
 <section id="olive" class="dark espresso" data-title="How Olive coaches a marathon">
@@ -488,13 +455,6 @@
       </div>
     </div>
   </div>
-  <div class="notes-src"><ul>
-    <li>Here's what a running coach looks like behind the scenes.</li>
-    <li>Chris logs a run on his Coros watch, it syncs through Strava, and it lands with Olive.</li>
-    <li>She reviews it and adjusts his training plan, all building towards a sub-4 at the Belfast City Marathon on Sunday 2 May 2027.</li>
-    <li>Every Monday she sends him a running summary. And she checks in with Margot, because the bots message each other and Margot assigns who covers what.</li>
-    <li>(The summary card is illustrative. Chris's actual times stay between him and Olive.)</li>
-  </ul></div>
 </section>
 
 <section id="dogs" class="dark" data-title="The real Margot, Olive and Harley">
@@ -516,12 +476,6 @@
       </div>
     </div>
   </div>
-  <div class="notes-src"><ul>
-    <li>In fairness to the originals, here they are. The real Margot, Olive and Harley.</li>
-    <li>That's Olive, the white one, on the left, Margot, the ginger one, in the middle, and Harley on the right. Olive is clearly on a Diet Coke break, and Harley, our favourite holiday guest, is dressed for his busiest season.</li>
-    <li>Neither of them can sync a running watch. Both of them think they're in charge.</li>
-    <li>(Optional: one line on each dog, whatever makes each of them, them.)</li>
-  </ul></div>
 </section>
 
 <section id="reveal" class="light" data-title="Full disclosure">
@@ -535,12 +489,6 @@
       <span class="chip">Nerves: all mine</span>
     </div>
   </div>
-  <div class="notes-src"><ul>
-    <li>In the spirit of authenticity: I had help getting ready for today.</li>
-    <li>My own assistant helped me research ARKK and prepare.</li>
-    <li>The thinking, and the nerves, are entirely my own.</li>
-    <li>Which is really the theme: it took the legwork so I could spend my time on the bit that matters.</li>
-  </ul></div>
 </section>
 
 <section id="work" class="dark espresso" data-title="At work">
@@ -565,12 +513,6 @@
       </div>
     </div>
   </div>
-  <div class="notes-src"><ul>
-    <li>At work, I led AI enablement for my team.</li>
-    <li>The most useful thing wasn't a policy or a platform. It was lunch-and-learns: live demos, real questions.</li>
-    <li>When people see it do something useful on their own work, curiosity beats caution.</li>
-    <li>The goal was never to make everyone an expert. It was to make everyone comfortable.</li>
-  </ul></div>
 </section>
 
 <section id="safe" class="light" data-title="Keeping it safe">
@@ -602,13 +544,6 @@
       <p class="reg-cap">A recreation of the AI registry I built, with example entries.</p>
     </div>
   </div>
-  <div class="notes-src"><ul>
-    <li>Enthusiasm brings a risk: people sneaking in unapproved tools. Shadow IT.</li>
-    <li>So we put in lightweight governance. Clear, simple, and quick to follow.</li>
-    <li>The point: people used AI openly and safely, rather than quietly working around the rules.</li>
-    <li>I built an AI registry so every tool, model and prompt had an owner, a risk rating and a scope, which made yes the easy answer instead of shadow IT.</li>
-    <li>The best guardrails are the ones light enough that people actually follow them.</li>
-  </ul></div>
 </section>
 
 <section id="learned" class="dark" data-title="What I've learned">
@@ -617,12 +552,6 @@
     <p class="lesson one rv d1">AI handles the boring bits.</p>
     <p class="lesson two rv d3">People own the <span class="grad">judgement.</span></p>
   </div>
-  <div class="notes-src"><ul>
-    <li>If I've learned one thing, at home or at work, it's this.</li>
-    <li>AI is brilliant at the boring bits: sorting, remembering, drafting, flagging.</li>
-    <li>People own the judgement: the context, the call, the accountability.</li>
-    <li>As I understand it, that's ARKK's approach too: machine learning flags inconsistent VAT transactions, and a person reviews them.</li>
-  </ul></div>
 </section>
 
 <section id="close" class="light" data-title="Close">
@@ -634,15 +563,8 @@
     <p class="thanks rv d3">Thank you.</p>
     <p class="small rv d4" style="margin-top:20px">Aimee McAllister</p>
   </div>
-  <div class="notes-src"><ul>
-    <li>So I'll leave you with a question. What's the one task you'd hand over tomorrow?</li>
-    <li>(Pause. Let them answer. Have mine ready: anything with the words &lsquo;reply all&rsquo;.)</li>
-    <li>Thank you. Margot, Olive and Harley send their regards.</li>
-  </ul></div>
 </section>
 
-<aside id="notes" aria-live="polite"><div class="nh"><span id="ntitle"></span><span>N to hide</span></div><div id="nbody"></div></aside>
-<button id="notesBtn" type="button" aria-controls="notes" aria-expanded="false">Notes</button>
 
 <script>
 (function(){
@@ -658,7 +580,6 @@
   var hero=document.querySelector('#hero .wrap'), cue=document.querySelector('.cue');
   var team=document.getElementById('team'), teamItems=[].slice.call(team.querySelectorAll('[data-at]'));
   var pars=[].slice.call(document.querySelectorAll('.par'));
-  var notes=document.getElementById('notes'), nbody=document.getElementById('nbody'), ntitle=document.getElementById('ntitle');
   var current=-1;
 
   /* reveals */
@@ -669,12 +590,6 @@
     rvs.forEach(function(e){io.observe(e)});
   }
 
-  function showNotes(k){
-    if(k===current) return; current=k;
-    var src=sections[k].querySelector('.notes-src');
-    nbody.innerHTML=src?src.innerHTML:'';
-    ntitle.textContent=(k+1)+'. '+(sections[k].getAttribute('data-title')||'');
-  }
 
 
   var flow=document.getElementById('flow'), flowItems=[].slice.call(document.querySelectorAll('#olive [data-s]')).sort(function(a,b){return a.getAttribute('data-s')-b.getAttribute('data-s')});
@@ -693,7 +608,6 @@
     bar.style.transform='scaleX('+(H>0?Math.min(1,y/H):0)+')';
     /* section in view: the one covering the viewport centre */
     var mid=y+vh/2;
-    for(var k=0;k<sections.length;k++){ var s=sections[k]; if(mid>=s.offsetTop&&mid<s.offsetTop+s.offsetHeight){showNotes(k);break;} }
     if(still){ teamItems.forEach(function(e){e.classList.add('on')}); return; }
     var small=mqSmall.matches, noFx=small||mqTouch.matches;
     /* hero: gentle scale + fade as it scrolls away (desktop only) */
@@ -718,15 +632,6 @@
   window.addEventListener('scroll',function(){ if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;onScroll();});} },{passive:true});
   window.addEventListener('resize',onScroll);
 
-  document.addEventListener('keydown',function(e){
-    if(e.metaKey||e.ctrlKey||e.altKey) return;
-    if(e.key==='n'||e.key==='N'){ e.preventDefault(); toggleNotes(); }
-  });
-  var nbtn=document.getElementById('notesBtn');
-  function toggleNotes(){ var on=notes.classList.toggle('show'); nbtn.setAttribute('aria-expanded',on?'true':'false'); nbtn.textContent=on?'Hide notes':'Notes'; }
-  nbtn.addEventListener('click',toggleNotes);
-
-  if(params.has('notes')) notes.classList.add('show');
   var at=parseInt(params.get('at'),10);
   var yy=parseInt(params.get('y'),10);
   function jump(){ if(!isNaN(at)&&sections[at-1]) window.scrollTo(0, sections[at-1].offsetTop + (isNaN(yy)?0:yy)); onScroll();
